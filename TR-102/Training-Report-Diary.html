@@ -482,5 +482,35 @@ clearInterval(matrixInterval);
 });
 });
 </script>
+    <script>
+  const dayLinks = {};
+  for (let i = 1; i <= 31; i++) {
+    dayLinks[i] = `files/day${i}.pdf`; // adjust path if needed
+  }
+
+  document.querySelectorAll('.calendar-day').forEach(dayEl => {
+    dayEl.addEventListener('click', () => {
+      const day = dayEl.dataset.day;
+      const filePath = dayLinks[day];
+      if (filePath) {
+        window.open(filePath, '_blank');
+      } else {
+        alert("No file linked for Day " + day);
+      }
+    });
+  });
+
+  document.querySelector('[data-category="projects"]').addEventListener('click', () => {
+    window.open('files/project.pdf', '_blank');
+  });
+
+  document.querySelector('[data-category="mini"]').addEventListener('click', () => {
+    window.open('files/mini-project.pdf', '_blank');
+  });
+
+  document.querySelector('[data-category="cert"]').addEventListener('click', () => {
+    window.open('files/certificate.pdf', '_blank');
+  });
+</script>
 </body>
 </html>
