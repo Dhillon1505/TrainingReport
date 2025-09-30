@@ -32,15 +32,15 @@
     <!-- Extra Categories -->
     <h3 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Other Documents</h3>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <button data-link="files/project.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
+      <button data-link="project.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
         <i class="ri-folder-line text-blue-600 text-4xl mb-2"></i>
         <span class="font-semibold">Projects</span>
       </button>
-      <button data-link="files/mini-project.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
+      <button data-link="mini-project.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
         <i class="ri-code-box-line text-blue-600 text-4xl mb-2"></i>
         <span class="font-semibold">Mini Projects</span>
       </button>
-      <button data-link="files/certificate.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
+      <button data-link="certificate.pdf" class="doc-btn bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center">
         <i class="ri-award-line text-blue-600 text-4xl mb-2"></i>
         <span class="font-semibold">Certificates</span>
       </button>
@@ -50,13 +50,13 @@
   <script>
     // Generate Day Buttons
     const calendarStrip = document.getElementById("calendar-strip");
-    const totalDays = 31; // adjust based on your training days
+    const totalDays = 31; // adjust to match your actual number of PDFs
     for (let i = 1; i <= totalDays; i++) {
       const btn = document.createElement("button");
       btn.className = "day-btn w-12 h-12 bg-white rounded-lg shadow hover:bg-blue-600 hover:text-white transition font-semibold";
       btn.textContent = i;
       btn.onclick = () => {
-        window.open(`files/day${i}.pdf`, "_blank");
+        window.open(`TR-102/files/day${i}.pdf`, "_blank");
       };
       calendarStrip.appendChild(btn);
     }
@@ -65,10 +65,9 @@
     document.querySelectorAll(".doc-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const link = btn.dataset.link;
-        window.open(link, "_blank");
+        window.open(`TR-102/files/${link}`, "_blank");
       });
     });
   </script>
 </body>
 </html>
-
